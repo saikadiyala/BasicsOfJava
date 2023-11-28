@@ -1,4 +1,4 @@
-public class Main {
+public class arrayMain {
     public static void main(String[] args) {
 
         array a=new array();
@@ -32,8 +32,6 @@ public class Main {
         for(array s: students){
             System.out.println(s.name+ " "+ s.marks);
         }
-
-
 
     }
 }
