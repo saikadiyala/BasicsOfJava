@@ -1,3 +1,5 @@
+package basic;
+
 class Calc{
 
     int a=10;

@@ -1,3 +1,5 @@
+package basic;
+
 public class inheritance {
 
     public int add(int n1,int n2){

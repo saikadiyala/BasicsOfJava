@@ -1,3 +1,5 @@
+package basic;
+
 public class arrayMain {
     public static void main(String[] args) {
 
