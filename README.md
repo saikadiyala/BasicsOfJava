@@ -111,3 +111,28 @@ This document provides a summary of key concepts discussed on November 28, 2023,
 - Thread safe - means only one thread can work on a data or an element at one time
 - t1.join() - to make sure thread completes its execution
 - Synchronized - used to make sure only one thread can access the method at a time.
+
+  # Java Basics - ReadMe
+
+**Date:** Wednesday, November 29, 2023
+
+## Overview
+
+This document provides a summary of key concepts discussed on November 29, 2023, related to Java programming.
+
+## Java Basics
+
+- Thread States - “New” (when a thread is created it will be in new state) —> start( ) ->  After start() it will go into “Runnable” state —> It will be in Runnable state waiting for scheduler —-> Using Run( ) it will move to “Running” state —> using sleep( ) or wait( ) it will move into “Waiting” state ——> using notify( ) it will move into Runnable from Waiting 
+- Using stop( ) to move from Runnable to “Dead” state or Running to “Dead” . But this is deprecated. We don’t need to explicitly close the threads, as they automatically close when we come out of execution.
+- When wait( ) is used notify( ) should be used to move from Waiting to Runnable
+- Collection API or Collections Framework , Collection(which is an interface) , Collections ( this is a class which has some methods) . All three are different
+- Iterable interface is extended by -> Collection Interface is extended by List , Queue, Set interfaces. Which again these interfaces are implemented by their classes as List Interface - ArrayList,LinkedList class, Queue Interface - DeQueue, Set Interface - HashSet, LinkedHashSet classes
+- List allows duplicate values, Set won’t ,  HashSet doesn’t follow the order and has no indexing, TreeSet sorts the values
+- Iterator( ) is used to iterate, which belongs to Iterator interface.
+- Map Interface is a part of Collection API, HashMap is a class which implements Map interface, supports key value pair, keys should be unique, null keys and values are allowed,
+- Hashtable is a class which implements Map, both are same but Hashtable is Synchronized(which allows only one thread to modify the Hashtable at a time)
+- Collections.sort(list) - this belongs to Collections class, used to sort the collection
+- Can write own our sort logic using Comparator. Compares the values of the list based on the logic and sorts.Collections.sort(list,comparator), 
+- We can use compareTo( ) method by implementing Comparable interface too. If the class is implementing Comparable  we dont need Comparator.
+- To give power to the class, We can use Comparable and, to specify on which logic we need to compare , we can use Comparator
+- Java 8, Streams API, Stream used to work on data, one Stream can be used only once, using it again throws error.provides methods to perform operations like filter, map, reduce.
