@@ -51,3 +51,63 @@ This document provides a summary of key concepts discussed on November 27, 2023,
 - Multi level is allowed - class B extends A - class C extends B
 - No multiple inheritance - class A extends B,C - Not allowed - because if same method is present in B and C , then A will be in ambiguity to call which class method. 
 - Package com.Source, import com.Source;
+
+# Java Basics - ReadMe
+
+**Date:** Tuesday, November 28, 2023
+
+## Overview
+
+This document provides a summary of key concepts discussed on November 28, 2023, related to Java programming.
+
+## Java Basics
+
+- Tuesday, November 28, 2023
+- Public (can be used from anywhere), Private (Only in same class), default (same package), protected(same package, outside package extended class only)
+- Generally Class public, instance variables private, Methods can be public/protected, don’t use default much without knowing where to use
+- Compile Time polymorphism (behavior is defined at compile time, EX: overloading) , Run time polymorphism (behavior is defined at run time EX: overriding)
+- Dynamic Method dispatch which method runs depends at run time, can create a reference variable of parent class and object of child class.
+- Final variable cannot be changed, final class cannot be extended, final method cannot be overridden(so no method overriding)
+- Every class extends Object class, if we do not override the methods from object class , then it will call Object class methods like toString(), hasCode(), equals()
+- Upcasting and Downcasting of objects.
+- Cannot create an object for abstract class, abstract class can have both abstract and non abstract methods, abstract methods should have only declaration, class which extends abstract class should define the abstract methods, if the method is abstract then class should be abstract.
+- Inner class can be static, inner class object should be created using outer class object if inner is not static.
+- When we need a method which should be overridden and used only once, then rather than extending the class and creating a new one, we can use anonymous inner class where overridden method is  written beside object creation. Where the object is created for the new overridden method and not for the original class.
+- We can also do the same for abstract methods.
+- If we have a abstract class, which has only abstract methods, then we can use interface instead of abstract.
+- Interface only declaration of methods are allowed, methods are public&abstract by default but from java 8 we can define methods in interface.
+- Multiple inheritance of interfaces are allowed - interface A implements B,C
+- Interface Y extends X
+- enum - classes
+- Annotations - supplement to compiler, - @Override, @Deprecate
+- @FunctionalInterface - interface which contains only one method, it doesn’t need to be implemented in another class and write its definition, we can create an object for interface and define the function beside the object using the interface name. Same like anonymous abstract functions.
+- For functional interfaces, java8 introduced Lambda functions ()->{} where you just define the function in the brackets. So less verbose.
+- Different types of interface —- Normal, Functional/SAM(Single Abstract Method) , Marker Interface
+- Marker Interface - blank interface no methods, nothing - used to update something to compiler saying please allow this (Ex serialization - storing objects in hard drive, so saying compiler to allow the objects to be able to store).
+- Errors - Compile time , run time or Exceptions, logical
+- Exception Handling - handling runtime errors
+- To Handle Exception Using try, catch block - if try fails , then catch will be executed and the remaining program continues
+- Try executes , till it finds an Exception and then if it finds it will move to catch block. Whatever the statements are executed before the exception in try they are continued after the catch too. So the statements are computed.
+- Object -> Throwable -> Exception
+- Exception -> RuntimeException(called as Unchecked Exceptions) , SQLException, IOException.. etc
+- RuntimeException -> ArrayIndexOutOfBounds, ArithmeticException, NullPointerException etc..
+- throw - throw keyword is used to throw the exception and catch block catches it. So we throw the exception and we handle them in catch.
+- throws - saying I am throwing an exception, not handling. The method which is calling me will handle the exception using try , catch or throw. So we just throw and wont handle. Used for checked exceptions.
+- println( ) is a method in PrintStream Class, out is an object of PrintStream Class which is a static variable of type PrintStream class created in System class.
+- Taking input : InputSystemReader in=new InputSystemReader(system.in), BufferedReader bf=new BufferedReader(in), bf.readLine( ), bf.close( ) //closing bcs buffered reader is a resource
+- Scanner sc = new Scanner(system.in), sc.next( )
+- Finally block can be used to execute things irrespective of try & catch. We can have try and finally without having catch block. Finally can be used to close the resources.
+- If you have a finally block, it will be executed regardless of whether there's a return statement or an exception within the try block. The purpose of the finally block is to ensure that certain code is executed regardless of how control leaves the try block—whether it's due to normal execution or an exception.
+- try(resources) - this can be used where the resources are given inside a try function and they are auto closeable.
+- Threads - Smallest Unit of execution in a process
+- Creating a Thread - Class A extends Thread , class A implements Runnable
+- A scheduler job is to allow which  threads to run at a time, so these threads can run parallel. The operating system's scheduler decides which threads get processed on which cores, based on factors like priority, thread readiness, and available resources.
+- Multi-threading is the concurrent execution of multiple threads within the same process.
+- Parallel:Parallel refers to events or processes that occur independently, side by side, and at the same time.In computing, parallelism often involves the simultaneous execution of multiple tasks on separate processing units, such as multiple CPU cores or processors. This can result in true concurrency, with each task making progress independently.
+- Simultaneous:Simultaneous means occurring at the same time.It can refer to events happening at the same moment, but it doesn't necessarily imply independence. Events can be simultaneous without occurring independently or in parallel. For example, two events might be scheduled to happen at the same time, but one might depend on the other.
+- Concurrent: Concurrent means events or processes that are in progress at the same time. It implies that multiple tasks are being executed, but, similar to "simultaneous," it doesn't inherently suggest independence. Concurrent tasks may share resources or be interleaved rather than running independently in parallel.
+- Thread.sleep(10) //asking the thread to wait
+- Threads & Mutation - where multiple threads are trying to update the same value ( Ex : Using 2 debit cards for a single bank account debiting money) , so in order to avoid that use immutable data or thread safe
+- Thread safe - means only one thread can work on a data or an element at one time
+- t1.join() - to make sure thread completes its execution
+- Synchronized - used to make sure only one thread can access the method at a time.
