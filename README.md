@@ -136,3 +136,39 @@ This document provides a summary of key concepts discussed on November 29, 2023,
 - We can use compareTo( ) method by implementing Comparable interface too. If the class is implementing Comparable  we dont need Comparator.
 - To give power to the class, We can use Comparable and, to specify on which logic we need to compare , we can use Comparator
 - Java 8, Streams API, Stream used to work on data, one Stream can be used only once, using it again throws error.provides methods to perform operations like filter, map, reduce.
+
+# OOPS - ReadMe
+
+**Date:** Thursday, November 30, 2023
+
+## Overview
+
+This document provides a summary of key concepts discussed on November 30, 2023, related to Java programming.
+
+- Class: logical entity, object: physical reality , instance of class, occupies space in memory
+- new - dynamically allocates memory, and returns a reference.
+- Wrapper classes like Integer,Float,Double and Boolean are final classes.
+- If a primitive variable is final, we cannot change its value. But, if a non primitive variable like an object reference variable is final, we can change its value, but cannot reassign it Ito other objects.
+- Garbage Collection will destroy unused objects from the memory. But Java provides methods , to use before garbage collection . finalize( )  is the method which we can use to perform things before garbage collection.
+- Singleton class - where you allow only one object to be created, make constructor private and access it using a public method, check if object is created or not. 
+- Inheritance, Polymorphism, Encapsulation, Abstraction
+
+# OOPS - ReadMe
+
+**Date:**  Monday, December 4, 2023
+
+## Overview
+
+- Type of reference variable determines what we can access, it doesn’t depend on the object.
+- Inbuilt Packages - lang(Essentials Java), io(input, output), util, applet, AWT, net(for networking)
+- Obj instanceof A: to check obj is instance of class A or not
+- obj.getClass( )  - gives the class, obj.getClass( ).getName( )
+- Abstract static method cannot be created , as static method cannot be overridden.
+- Interface variables are final & static. 
+- From java 8, Interface can have default and static methods which should contain a body.
+- If an interface contains protected access for a method, then in implementation , the method should be either protected or more restrictive like private.  overridden methods - should not be less protective.
+- In Generics, Type Parameter (T) is not allowed for static variables. 
+- Can you upper bound wildcards ( ? ) to relax the restrictions on a variable. process(ArrayList< ? Extends Number) , Here process will accept Number and its subtypes which are Integer, Double etc. So extends should be with upper bound.
+- Shallow copy and deep copying
+- Vector is synchronised
+
